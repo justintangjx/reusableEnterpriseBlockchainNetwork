@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 3s
+
+scrape_configs:
+  - job_name: 'monitoring'
+    static_configs:
+      - targets: ['peer0.org1.example.com:9443']
+        labels:
+          service: 'org1peer0'
+      - targets: ['peer0.org2.example.com:9443']
+        labels:
+          service: 'org2peer0'
+      - targets: ['orderer.example.com:8443']
+        labels:
+          service: 'orderer'
